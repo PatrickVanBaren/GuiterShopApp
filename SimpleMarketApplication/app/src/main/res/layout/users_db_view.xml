@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/product_view_margin">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="***">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/user_name_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="5"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/user_name"/>
+
+            <TextView
+                android:id="@+id/user_phone_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/user_phone" />
+
+            <TextView
+                android:id="@+id/create_date_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/create_date"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/user_db_name_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="5"
+                android:textColor="@color/colorPrimaryDark"
+                android:text=""
+                tools:text="@string/user_db_name" />
+
+            <TextView
+                android:id="@+id/user_db_phone_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:textColor="@color/colorPrimaryDark"
+                android:text=""
+                tools:text="@string/user_db_phone" />
+
+            <TextView
+                android:id="@+id/user_db_date_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:textColor="@color/colorPrimaryDark"
+                android:text=""
+                tools:text="@string/date" />
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

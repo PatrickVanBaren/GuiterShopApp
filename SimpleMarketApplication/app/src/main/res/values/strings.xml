@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Simple Market Application</string>
+
+    <string name="shopping_basket_client">Перейти в корзину</string>
+    <string name="admin_roots">Стать администратором</string>
+    <string name="client_roots">Войти как покупатель</string>
+    <string name="client_products_list">Перейти к товару</string>
+    <string name="admin_order_list">Заказы</string>
+    <string name="admin_users_list">Пользователи</string>
+    <string name="exit">Выйти</string>
+
+    <string name="buyer_auth">Вы вошли как покупатель</string>
+    <string name="admin_auth">Вы вошли как администратор</string>
+
+    <string name="product_description">Название продукта</string>
+    <string name="price">50,000 ₽</string>
+    <string name="sing"> ₽</string>
+    <string name="order">Оформить заказ</string>
+    <string name="user_phone">Номер телефона</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="date">21.09.1989 13.54</string>
+    <string name="create_date">Дата резистрации</string>
+    <string name="delete_order">Удалить заказ</string>
+    <string name="delete_user">Удалить пользователя</string>
+
+    <string name="date_format">MM.dd.yyyy HH:mm</string>
+    <string name="ok_button">OK</string>
+    <string name="cancel_button">Отмена</string>
+
+    <string name="product_create_title">Создание продукта</string>
+    <string name="edit_product">Редактирование продукта</string>
+    <string name="edit_user">Редактирование пользователя</string>
+    <string name="positive_button">Создать</string>
+    <string name="negative_button">Отмена</string>
+    <string name="edit_button">Редактировать</string>
+    <string name="post_error_warning">Поле с названием продукта или его ценой пусты!</string>
+    <string name="warning">Ошибка</string>
+    <string name="user_error_warning">Имя или номер телефона не были введены!</string>
+
+    <string name="delete_confirm">Вы действительно хотите удалить?</string>
+    <string name="delete_title">Подтвердите удаление</string>
+
+    <string name="product_description_hint">Название товара</string>
+    <string name="product_price_hint">Цена товара</string>
+
+    <string name="enter_name">Введите имя</string>
+    <string name="enter_number">Введите номер телефона</string>
+    <string name="user_create_title">Чтобы оформить заказ, зарегистрируйтесь</string>
+
+    <string name="copying_product">Товар добавлен в корзину</string>
+
+    <string name="password_request">Введите пароль</string>
+
+    <string name="navigation_drawer_open">Меню</string>
+    <string name="navigation_drawer_close">@string/app_name</string>
+    <string name="success_order_text">Заказ оформлен!</string>
+
+    <string name="user_db_name">Наливайкин Проковий Эмануилович</string>
+    <string name="user_db_phone">+79618543374</string>
+
+</resources>

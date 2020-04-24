@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/product_view_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/product_view_margin">
+
+        <TextView
+            android:id="@+id/user_order_product_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text=""
+            tools:text="@string/product_description"/>
+
+        <TextView
+            android:id="@+id/user_order_price_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/user_order_product_view"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="36sp"
+            android:text=""
+            tools:text="@string/price"/>
+
+        <Button
+            android:id="@+id/user_order_button_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_order_price_view"
+            android:text=""
+            tools:text="@string/order"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/user_order_price_view"
+            android:textSize="26sp"
+            android:text="@string/success_order_text"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

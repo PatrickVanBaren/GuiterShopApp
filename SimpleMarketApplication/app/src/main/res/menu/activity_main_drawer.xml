@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_basket_client"
+        android:title="@string/shopping_basket_client" />
+
+    <item
+        android:id="@+id/nav_product_list"
+        android:title="@string/client_products_list"/>
+
+    <item
+        android:id="@+id/nav_admin"
+        android:title="@string/admin_roots" />
+
+    <item
+        android:id="@+id/nav_basket_admin"
+        android:title="@string/admin_order_list"/>
+
+    <item
+        android:id="@+id/nav_users_admin"
+        android:title="@string/admin_users_list"/>
+
+    <item
+        android:id="@+id/nav_client"
+        android:title="@string/client_roots" />
+
+    <item
+        android:id="@+id/nav_exit"
+        android:title="@string/exit" />
+
+</menu>
