@@ -3,7 +3,7 @@ package com.example.simplemarketapplication.db.Tables;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import java.sql.Date;
+import java.util.Date;
 
 @DatabaseTable(tableName = Users.TABLE_NAME)
 public class Users {

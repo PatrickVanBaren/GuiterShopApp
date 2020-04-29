@@ -104,7 +104,7 @@ public class PostAdminShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostCreatedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -114,12 +114,12 @@ public class PostAdminShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostsLoadedSuccessfully(Set<PostShoppingBasket> postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
         public void onSBPostDeletedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -129,7 +129,7 @@ public class PostAdminShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostUpdatedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -145,7 +145,7 @@ public class PostAdminShoppingBasketFragment extends Fragment {
                 .setTitle(R.string.delete_title)
                 .setNegativeButton(R.string.cancel_button, null)
                 .setPositiveButton(R.string.ok_button, ((dialog, which) -> {
-                    PostShoppingBasket removePostProduct = (PostShoppingBasket) postsModule.getPosts().toArray()[position];
+                    PostShoppingBasket removePostProduct = (PostShoppingBasket) postsModule.getPostsSB().toArray()[position];
                     postsModule.deleteProductSB(removePostProduct);
                 }))
                 .create().show();
@@ -168,7 +168,7 @@ public class PostAdminShoppingBasketFragment extends Fragment {
     public void onResume() {
         super.onResume();
         postsModule.addListener(postsListener);
-        mPostAdapter.setPost(postsModule.getPosts().toArray());
+        mPostAdapter.setPost(postsModule.getPostsSB().toArray());
     }
 
     @Override

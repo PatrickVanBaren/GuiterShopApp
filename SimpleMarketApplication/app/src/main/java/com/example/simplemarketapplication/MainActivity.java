@@ -2,6 +2,7 @@ package com.example.simplemarketapplication;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -46,40 +47,46 @@ public class MainActivity extends AppCompatActivity implements CreatePostDialogF
         public void onStateChanged(AuthModule.State state) {
             switch (state) {
                 case CLIENT_PRODUCTS_LIST:
-                    mUserBasketMenuItem.setEnabled(true);
-                    mProductListMenuItem.setEnabled(false);
-                    mAdminAuthMenuItem.setEnabled(true);
-                    mAdminBasketMenuItem.setEnabled(false);
-                    mUsersTableMenuItem.setEnabled(false);
-                    mUserAuthMenuItem.setEnabled(false);
+                    new Handler(getApplicationContext().getMainLooper()).post(() -> {
+                        mUserBasketMenuItem.setVisible(true);
+                        mProductListMenuItem.setVisible(false);
+                        mAdminAuthMenuItem.setVisible(true);
+                        mAdminBasketMenuItem.setVisible(false);
+                        mUsersTableMenuItem.setVisible(false);
+                        mUserAuthMenuItem.setVisible(false);
+                        mDeleteProductButton.setVisibility(View.GONE);
+                    });
                     mFloatingActionButton.setVisibility(View.GONE);
-                    mDeleteProductButton.setVisibility(View.GONE);
                     mUserAuth.setText(R.string.buyer_auth);
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.main_product_view, new PostProductListFragment())
                             .commit();
                     break;
                 case ADMINISTRATOR_PRODUCTS_LIST:
-                    mUserBasketMenuItem.setEnabled(false);
-                    mProductListMenuItem.setEnabled(false);
-                    mAdminAuthMenuItem.setEnabled(false);
-                    mAdminBasketMenuItem.setEnabled(true);
-                    mUsersTableMenuItem.setEnabled(true);
-                    mUserAuthMenuItem.setEnabled(true);
+                    new Handler(getApplicationContext().getMainLooper()).post(() -> {
+                        mUserBasketMenuItem.setVisible(false);
+                        mProductListMenuItem.setVisible(false);
+                        mAdminAuthMenuItem.setVisible(false);
+                        mAdminBasketMenuItem.setVisible(true);
+                        mUsersTableMenuItem.setVisible(true);
+                        mUserAuthMenuItem.setVisible(true);
+                        mDeleteProductButton.setVisibility(View.VISIBLE);
+                    });
                     mFloatingActionButton.setVisibility(View.VISIBLE);
-                    mDeleteProductButton.setVisibility(View.VISIBLE);
                     mUserAuth.setText(R.string.admin_auth);
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.main_product_view, new PostProductListFragment())
                             .commit();
                     break;
                 case CLIENT_ORDER_LIST:
-                    mUserBasketMenuItem.setEnabled(false);
-                    mProductListMenuItem.setEnabled(true);
-                    mAdminAuthMenuItem.setEnabled(true);
-                    mAdminBasketMenuItem.setEnabled(false);
-                    mUsersTableMenuItem.setEnabled(false);
-                    mUserAuthMenuItem.setEnabled(false);
+                    new Handler(getApplicationContext().getMainLooper()).post(() -> {
+                        mUserBasketMenuItem.setVisible(false);
+                        mProductListMenuItem.setVisible(true);
+                        mAdminAuthMenuItem.setVisible(true);
+                        mAdminBasketMenuItem.setVisible(false);
+                        mUsersTableMenuItem.setVisible(false);
+                        mUserAuthMenuItem.setVisible(false);
+                    });
                     mFloatingActionButton.setVisibility(View.GONE);
                     mUserAuth.setText(R.string.buyer_auth);
                     getSupportFragmentManager().beginTransaction()
@@ -87,12 +94,14 @@ public class MainActivity extends AppCompatActivity implements CreatePostDialogF
                             .commit();
                     break;
                 case ADMINISTRATOR_ORDER_LIST:
-                    mUserBasketMenuItem.setEnabled(false);
-                    mProductListMenuItem.setEnabled(true);
-                    mAdminAuthMenuItem.setEnabled(false);
-                    mAdminBasketMenuItem.setEnabled(false);
-                    mUsersTableMenuItem.setEnabled(true);
-                    mUserAuthMenuItem.setEnabled(true);
+                    new Handler(getApplicationContext().getMainLooper()).post(() -> {
+                        mUserBasketMenuItem.setVisible(false);
+                        mProductListMenuItem.setVisible(true);
+                        mAdminAuthMenuItem.setVisible(false);
+                        mAdminBasketMenuItem.setVisible(false);
+                        mUsersTableMenuItem.setVisible(true);
+                        mUserAuthMenuItem.setVisible(true);
+                    });
                     mFloatingActionButton.setVisibility(View.GONE);
                     mUserAuth.setText(R.string.admin_auth);
                     getSupportFragmentManager().beginTransaction()
@@ -100,12 +109,14 @@ public class MainActivity extends AppCompatActivity implements CreatePostDialogF
                             .commit();
                     break;
                 case ADMINISTRATOR_USERS_LIST:
-                    mUserBasketMenuItem.setEnabled(false);
-                    mProductListMenuItem.setEnabled(true);
-                    mAdminAuthMenuItem.setEnabled(false);
-                    mAdminBasketMenuItem.setEnabled(true);
-                    mUsersTableMenuItem.setEnabled(false);
-                    mUserAuthMenuItem.setEnabled(true);
+                    new Handler(getApplicationContext().getMainLooper()).post(() -> {
+                        mUserBasketMenuItem.setVisible(false);
+                        mProductListMenuItem.setVisible(true);
+                        mAdminAuthMenuItem.setVisible(false);
+                        mAdminBasketMenuItem.setVisible(true);
+                        mUsersTableMenuItem.setVisible(false);
+                        mUserAuthMenuItem.setVisible(true);
+                    });
                     mFloatingActionButton.setVisibility(View.GONE);
                     mUserAuth.setText(R.string.admin_auth);
                     getSupportFragmentManager().beginTransaction()
@@ -156,8 +167,6 @@ public class MainActivity extends AppCompatActivity implements CreatePostDialogF
         mAdminBasketMenuItem = navigationView.getMenu().findItem(R.id.nav_basket_admin);
         mUsersTableMenuItem = navigationView.getMenu().findItem(R.id.nav_users_admin);
         mUserAuthMenuItem = navigationView.getMenu().findItem(R.id.nav_client);
-
-
     }
 
     @Override

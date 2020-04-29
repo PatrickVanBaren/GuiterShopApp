@@ -12,7 +12,7 @@
     <string name="buyer_auth">Вы вошли как покупатель</string>
     <string name="admin_auth">Вы вошли как администратор</string>
 
-    <string name="product_description">Название продукта</string>
+    <string name="product_description">Нууу ооооочень длинное название продукта для магазина</string>
     <string name="price">50,000 ₽</string>
     <string name="sing"> ₽</string>
     <string name="order">Оформить заказ</string>

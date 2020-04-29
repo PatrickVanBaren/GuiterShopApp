@@ -104,7 +104,7 @@ public class PostUserShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostCreatedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -114,12 +114,12 @@ public class PostUserShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostsLoadedSuccessfully(Set<PostShoppingBasket> postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
         public void onSBPostDeletedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -129,7 +129,7 @@ public class PostUserShoppingBasketFragment extends Fragment {
 
         @Override
         public void onSBPostUpdatedSuccessfully(PostShoppingBasket postShoppingBasket) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsSB().toArray());
         }
 
         @Override
@@ -139,7 +139,7 @@ public class PostUserShoppingBasketFragment extends Fragment {
     };
 
     PostUserShoppingBasketAdapter.ClickListener mPostClickListener = position -> {
-        PostShoppingBasket postProduct = (PostShoppingBasket) postsModule.getPosts().toArray()[position];
+        PostShoppingBasket postProduct = (PostShoppingBasket) postsModule.getPostsSB().toArray()[position];
         CreateUserDialogFragment userRegistrationDF = new CreateUserDialogFragment();
         userRegistrationDF.setPost(postProduct);
         userRegistrationDF.show(getFragmentManager(), "PostShoppingBasketFragment");
@@ -162,7 +162,7 @@ public class PostUserShoppingBasketFragment extends Fragment {
     public void onResume() {
         super.onResume();
         postsModule.addListener(postListener);
-        mPostAdapter.setPost(postsModule.getPosts().toArray());
+        mPostAdapter.setPost(postsModule.getPostsSB().toArray());
     }
 
     @Override

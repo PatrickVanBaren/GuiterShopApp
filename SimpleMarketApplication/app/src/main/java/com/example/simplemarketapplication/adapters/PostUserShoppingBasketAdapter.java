@@ -34,7 +34,7 @@ public class PostUserShoppingBasketAdapter extends RecyclerView.Adapter<PostUser
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PostShoppingBasket postProduct = (PostShoppingBasket) postsArray[position];
         holder.mProductName.setText(postProduct.getProductDescription());
-        holder.mPrice.setText(postProduct.getProductPrice() + R.string.sing);
+        holder.mPrice.setText(postProduct.getProductPrice() + holder.itemView.getContext().getString(R.string.sing));
     }
 
     @Override

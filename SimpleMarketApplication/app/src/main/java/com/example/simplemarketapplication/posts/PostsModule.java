@@ -130,16 +130,16 @@ public class PostsModule {
 
         changeState(State.UPDATING);
 
-        new UpdatePostProduct().execute(postProduct.getId());
+        new UpdatePostProduct().execute(postProduct);
     }
 
-    public void updateUsers(final PostUser postProduct) {
+    public void updateUsers(final PostUser postUser) {
         //if (mState != State.IDLE) throw new RuntimeException();//?
         //Preconditions.checkState(mState == State.IDLE);
 
         changeState(State.UPDATING);
 
-        new UpdatePostUser().execute();
+        new UpdatePostUser().execute(postUser);
     }
 
     public void updateProductSB(final PostShoppingBasket postProduct) {
@@ -148,7 +148,7 @@ public class PostsModule {
 
         changeState(State.UPDATING);
 
-        new UpdatePostShoppingBasket().execute(postProduct.getSBId());
+        new UpdatePostShoppingBasket().execute(postProduct);
     }
 
     public void loadProduct() {
@@ -210,9 +210,18 @@ public class PostsModule {
         mListeners.remove(listener);
     }
 
-    public Set<PostProduct> getPosts() {
+    public Set<PostProduct> getPostsProduct() {
         return ImmutableSet.copyOf(mPostsProduct);
     }
+
+    public Set<PostShoppingBasket> getPostsSB() {
+        return ImmutableSet.copyOf(mPostsAdminShoppingBasket);
+    }
+
+    public Set<PostUser> getPostsUsers() {
+        return ImmutableSet.copyOf(mPostsUsers);
+    }
+
 
     private class InitialProductsLoader extends AsyncTask<Void, Void, Set<PostProduct>> {
 
@@ -252,6 +261,7 @@ public class PostsModule {
             postProduct.setId(products.getId());
             postProduct.setDescription(products.getTitle());
             postProduct.setPrice(products.getPrice());
+            postProduct.setCreatedTime(products.getCreatedTime());
             return postProduct;
         }
     }
@@ -294,6 +304,7 @@ public class PostsModule {
             user.setUserId(users.getId());
             user.setUserName(users.getUserName());
             user.setPhoneNumber(users.getPhoneNumber());
+            user.setUserCreatedTime(users.getCreateTime());
             return user;
         }
     }
@@ -336,6 +347,7 @@ public class PostsModule {
             postProduct.setSBId(shoppingBasket.getId());
             postProduct.setProductDescription(shoppingBasket.getTitle());
             postProduct.setProductPrice(shoppingBasket.getPrice());
+            postProduct.setCreateTime(shoppingBasket.getCreatedTime());
             if (shoppingBasket.getUser() == null || shoppingBasket.getPhone() == null) {
                 postProduct.setUserName("");
                 postProduct.setUserPhone("");
@@ -352,6 +364,7 @@ public class PostsModule {
         product.setId(postProduct.getId());
         product.setTitle(postProduct.getDescription());
         product.setPrice(postProduct.getPrice());
+        product.setCreatedTime(postProduct.getCreatedTime());
         return product;
     }
 
@@ -360,6 +373,7 @@ public class PostsModule {
         product.setId(postProduct.getSBId());
         product.setTitle(postProduct.getProductDescription());
         product.setPrice(postProduct.getProductPrice());
+        product.setCreatedTime(postProduct.getCreateTime());
         if (postProduct.getUserName() == null || postProduct.getUserPhone() == null) {
             product.setUser("");
             product.setPhone("");
@@ -375,6 +389,7 @@ public class PostsModule {
         user.setId(postUser.getUserId());
         user.setUserName(postUser.getUserName());
         user.setPhoneNumber(postUser.getPhoneNumber());
+        user.setCreateTime(postUser.getUserCreatedTime());
         return user;
     }
 

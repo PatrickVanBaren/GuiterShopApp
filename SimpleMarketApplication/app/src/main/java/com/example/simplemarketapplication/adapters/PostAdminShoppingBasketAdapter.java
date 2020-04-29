@@ -42,7 +42,7 @@ public class PostAdminShoppingBasketAdapter extends RecyclerView.Adapter<PostAdm
         holder.mUserName.setText(postProduct.getUserName());
         holder.mUserPhone.setText(postProduct.getUserPhone());
         holder.mProduct.setText(postProduct.getProductDescription());
-        holder.mPrice.setText(postProduct.getProductPrice() + R.string.sing);
+        holder.mPrice.setText(postProduct.getProductPrice() + holder.itemView.getContext().getString(R.string.sing));
     }
 
     public void setOnItemClickListener(PostAdminShoppingBasketAdapter.ClickListener clickListener) {

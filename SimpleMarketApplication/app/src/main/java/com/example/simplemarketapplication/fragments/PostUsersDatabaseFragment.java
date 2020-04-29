@@ -81,7 +81,7 @@ public class PostUsersDatabaseFragment extends Fragment {
 
         @Override
         public void onUsersPostCreatedSuccessfully(PostUser post) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsUsers().toArray());
         }
 
         @Override
@@ -91,12 +91,12 @@ public class PostUsersDatabaseFragment extends Fragment {
 
         @Override
         public void onUsersPostsLoadedSuccessfully(Set<PostUser> posts) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsUsers().toArray());
         }
 
         @Override
         public void onUsersPostUpdatedSuccessfully(PostUser post) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsUsers().toArray());
         }
 
         @Override
@@ -141,7 +141,7 @@ public class PostUsersDatabaseFragment extends Fragment {
     };
 
     PostUsersDatabaseAdapter.ClickListener mPostClickListener = position -> {
-        PostUser user = (PostUser) postsModule.getPosts().toArray()[position];
+        PostUser user = (PostUser) postsModule.getPostsUsers().toArray()[position];
         EditUserPostDialogFragment editPost = new EditUserPostDialogFragment();
         editPost.setPostUser(user);
         editPost.show(getFragmentManager(), "EditUserDialogFragment");
@@ -164,7 +164,7 @@ public class PostUsersDatabaseFragment extends Fragment {
     public void onResume() {
         super.onResume();
         postsModule.addListener(postListener);
-        mPostAdapter.setPost(postsModule.getPosts().toArray());
+        mPostAdapter.setPost(postsModule.getPostsUsers().toArray());
     }
 
     @Override

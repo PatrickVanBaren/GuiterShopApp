@@ -56,13 +56,6 @@ public class Products {
         mCreatedTime = createdTime;
     }
 
-//    public Map<String, Integer> product;
-//    public Map<String, String> users;
-//    public List<String> shoppingBasket;
-//
-//    public Products() {
-//
-//        product = new HashMap<String, Integer>(){{
 //            put("Zombie V-165", 2500);
 //            put("Zombie EDG-45", 100);
 //            put("Ibanez Prestige RGD2127FX-ISH", 85000);
@@ -80,25 +73,17 @@ public class Products {
 //            put("Legator Opus Performance 6", 26400);
 //            put("Solar V1.7FB", 96100);
 //            put("Solar S2.6C", 51700);
-//        }};
-//
-//        users = new HashMap<>();
-//
-//        shoppingBasket = new ArrayList<>();
-//    }
-
-
 
 //    database.execSQL("CREATE TABLE '" + ContractUser.PRODUCT_TABLE + "' ('" +
 //    ContractUser.COLUMN_NAME_ID + "' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, '" +
 //    ContractUser.COLUMN_NAME_TITLE + "' VARCHAR, '" +
 //    ContractUser.COLUMN_NAME_PRICE + "' INTEGER)");
-//
+
 //        database.execSQL("CREATE TABLE '" + ContractUser.USERS_TABLE + "' ('" +
 //    ContractUser.COLUMN_NAME_ID + "' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, '" +
 //    ContractUser.COLUMN_NAME_USER_NAME + "' VARCHAR, '" +
 //    ContractUser.COLUMN_NAME_PHONE_NUMBER + "' VARCHAR)");
-//
+
 //        database.execSQL("CREATE TABLE '" + ContractUser.SHOPPING_BASKET_TABLE + "' ('" +
 //    ContractUser.COLUMN_NAME_ID + "' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, '" +
 //    ContractUser.COLUMN_NAME_ORDERS + "' VARCHAR)");

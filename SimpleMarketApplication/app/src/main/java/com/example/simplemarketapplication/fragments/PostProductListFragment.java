@@ -42,7 +42,7 @@ public class PostProductListFragment extends Fragment {
 
         @Override
         public void onPostCreatedSuccessfully(PostProduct postProduct) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsProduct().toArray());
         }
 
         @Override
@@ -52,7 +52,7 @@ public class PostProductListFragment extends Fragment {
 
         @Override
         public void onPostsLoadedSuccessfully(Set<PostProduct> postProducts) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsProduct().toArray());
         }
 
         @Override
@@ -62,7 +62,7 @@ public class PostProductListFragment extends Fragment {
 
         @Override
         public void onPostDeletedSuccessfully(PostProduct postProduct) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsProduct().toArray());
         }
 
         @Override
@@ -72,7 +72,7 @@ public class PostProductListFragment extends Fragment {
 
         @Override
         public void onPostUpdatedSuccessfully(PostProduct postProduct) {
-            mPostAdapter.setPost(postsModule.getPosts().toArray());
+            mPostAdapter.setPost(postsModule.getPostsProduct().toArray());
         }
 
         @Override
@@ -145,7 +145,7 @@ public class PostProductListFragment extends Fragment {
         @Override
         public void onPostClick(int position) {
             if (authModule.getState() == AuthModule.State.ADMINISTRATOR_PRODUCTS_LIST) {
-                PostProduct editPostProduct = (PostProduct) postsModule.getPosts().toArray()[position];
+                PostProduct editPostProduct = (PostProduct) postsModule.getPostsProduct().toArray()[position];
                 EditPostDialogFragment editPostDialogFragment = new EditPostDialogFragment();
                 editPostDialogFragment.setPost(editPostProduct);
                 editPostDialogFragment.show(getFragmentManager(), "EditPostDialogFragment");
@@ -160,7 +160,7 @@ public class PostProductListFragment extends Fragment {
                     .setTitle(R.string.delete_title)
                     .setNegativeButton(R.string.cancel_button, null)
                     .setPositiveButton(R.string.ok_button, ((dialog, which) -> {
-                        PostProduct removePostProduct = (PostProduct) postsModule.getPosts().toArray()[position];
+                        PostProduct removePostProduct = (PostProduct) postsModule.getPostsProduct().toArray()[position];
                         postsModule.deleteProduct(removePostProduct);
                     }))
                     .create().show();
@@ -168,7 +168,7 @@ public class PostProductListFragment extends Fragment {
 
         @Override
         public void onCreateUserSBPostButton(int position) {
-            PostProduct copyPostProduct = (PostProduct) postsModule.getPosts().toArray()[position];
+            PostProduct copyPostProduct = (PostProduct) postsModule.getPostsProduct().toArray()[position];
             new PostShoppingBasket(copyPostProduct);
             Toast.makeText(getContext(), R.string.copying_product, Toast.LENGTH_SHORT).show();
         }
@@ -191,7 +191,7 @@ public class PostProductListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         postsModule.addListener(postListener);
-        mPostAdapter.setPost(postsModule.getPosts().toArray());
+        mPostAdapter.setPost(postsModule.getPostsProduct().toArray());
     }
 
     @Override

@@ -34,7 +34,7 @@ public class PostProductListAdapter extends RecyclerView.Adapter<PostProductList
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         PostProduct postProduct = (PostProduct) postsArray[position];
         holder.mProductName.setText(postProduct.getDescription());
-        holder.mPrice.setText(postProduct.getPrice() + R.string.sing);
+        holder.mPrice.setText(postProduct.getPrice() + holder.itemView.getContext().getString(R.string.sing));
     }
 
     @Override
